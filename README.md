@@ -62,17 +62,5 @@
 
 - [x] Ultra Fast Lane Detection  ONNX 及推理代码实现
 
-## 5. LaneATT实验细节记录
-
-![method-overview](F:\LaneATT-main\data\figures\method-overview.png)
-
-- 数据先行，自定义数据，格式转化
-
-  - labelme标注点集，自上而下，线型
-  - 自定义标注的车道线数据 转化为 类似 tusimple格式
-  - 设置76个点  取图像（1920*1080）的30% 以下作为gt线 eg: 1080*0.3 向下取整， 每10个像素作为一个点，取10的倍数点
-  - 根据标注的最后两个y 点 自上而下拟合图像下方 x, 适当延长线也可解决遮挡问题
-  - 生成json格式数据(data/labelmejson2simTusimple.py)，提取frequency_anchor_lane(utils/gen_anchor_mask.py)
-
   
 
